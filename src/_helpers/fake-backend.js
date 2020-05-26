@@ -26,7 +26,10 @@ export function configureFakeBackend() {
                     if (!isLoggedIn) return unauthorised();
                     return ok(users);
                 }
-
+                if(url.endsWith('/helloWorld') && opts.method === 'GET'){
+                    if(!isLoggedIn) return unauthorised();
+                    return ok({"message": "hellow"});
+                }
                 // pass through any requests not handled above
                 realFetch(url, opts).then(response => resolve(response));
 

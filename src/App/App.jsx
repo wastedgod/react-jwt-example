@@ -6,6 +6,7 @@ import { authenticationService } from '@/_services';
 import { PrivateRoute } from '@/_components';
 import { HomePage } from '@/HomePage';
 import { LoginPage } from '@/LoginPage';
+import { HelloWorldPage } from '@/HelloWorldPage';
 
 class App extends React.Component {
     constructor(props) {
@@ -45,6 +46,9 @@ class App extends React.Component {
                                     <PrivateRoute exact path="/" component={HomePage} />
                                     <Route path="/login" component={LoginPage} />
                                 </div>
+                            </div>
+                            <div className="row">
+                                <PrivateRoute exact path="/HelloWorldPage" component={HelloWorldPage} />
                             </div>
                         </div>
                     </div>
